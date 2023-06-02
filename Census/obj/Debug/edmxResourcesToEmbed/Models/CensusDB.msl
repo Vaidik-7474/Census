@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CensusDBModelStoreContainer" CdmEntityContainer="CensusDBEntities">
+    <EntitySetMapping Name="Families">
+      <EntityTypeMapping TypeName="CensusDBModel.Family">
+        <MappingFragment StoreEntitySet="Family">
+          <ScalarProperty Name="houseNo" ColumnName="houseNo" />
+          <ScalarProperty Name="totalPerson" ColumnName="totalPerson" />
+          <ScalarProperty Name="totalMale" ColumnName="totalMale" />
+          <ScalarProperty Name="totalFemale" ColumnName="totalFemale" />
+          <ScalarProperty Name="totalChild" ColumnName="totalChild" />
+          <ScalarProperty Name="street" ColumnName="street" />
+          <ScalarProperty Name="village" ColumnName="village" />
+          <ScalarProperty Name="taluka" ColumnName="taluka" />
+          <ScalarProperty Name="district" ColumnName="district" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="pincode" ColumnName="pincode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

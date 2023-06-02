@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Census Report", "Index", "CrudMvc", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "./CrudMvc/Index", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("Pincode", "Index", "./CrudMvc/Index", new { area = "" }, new { @id = "PinId" })</li>
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("PinId").onclick = function () { myFunction() }
+
+        function myFunction() {
+            let VlPin = prompt("Please enter pincode", "364230");
+
+            if (VlPin.length == 6) {
+                
+                window.open("https://localhost:44359/CrudMvc/DetailsByPincode?pin="+ VlPin);
+            }
+            
+            else {
+                alert("Please enter valid pinode.");
+            }
+        }
+
+    </script>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>Copyright &copy; @DateTime.Now.Year - All rights reserved. Census.</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>

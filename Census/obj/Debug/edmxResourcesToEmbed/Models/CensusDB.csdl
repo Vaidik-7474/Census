@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CensusDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Family">
+    <Key>
+      <PropertyRef Name="houseNo" />
+    </Key>
+    <Property Name="houseNo" Type="Int32" Nullable="false" />
+    <Property Name="totalPerson" Type="Int32" Nullable="false" />
+    <Property Name="totalMale" Type="Int32" Nullable="false" />
+    <Property Name="totalFemale" Type="Int32" Nullable="false" />
+    <Property Name="totalChild" Type="Int32" Nullable="false" />
+    <Property Name="street" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="village" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="taluka" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="district" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="pincode" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="CensusDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Families" EntityType="Self.Family" />
+  </EntityContainer>
+</Schema>

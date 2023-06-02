@@ -1,0 +1,102 @@
+﻿@model Census.Models.Family
+
+<div>
+    <h3>Family's Details</h3>
+    <hr  />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("House No")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.houseNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Total Persons")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.totalPerson)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Total Male")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.totalMale)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Total Female")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.totalFemale)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Total Child")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.totalChild)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Street")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.street)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Village")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.village)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Taluka")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.taluka)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("District")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.district)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("State")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.state)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Pincode")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pincode)
+        </dd>
+
+    </dl>
+
+</div>
+
+<div class="col-md-offset-5 col-md-10">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.houseNo }, new { @class = "btn btn-success" }) |
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+</div>

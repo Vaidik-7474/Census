@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CensusDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Family">
+          <Key>
+            <PropertyRef Name="houseNo" />
+          </Key>
+          <Property Name="houseNo" Type="int" Nullable="false" />
+          <Property Name="totalPerson" Type="int" Nullable="false" />
+          <Property Name="totalMale" Type="int" Nullable="false" />
+          <Property Name="totalFemale" Type="int" Nullable="false" />
+          <Property Name="totalChild" Type="int" Nullable="false" />
+          <Property Name="street" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="village" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="taluka" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="district" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="state" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="pincode" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="CensusDBModelStoreContainer">
+          <EntitySet Name="Family" EntityType="Self.Family" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CensusDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Family">
+          <Key>
+            <PropertyRef Name="houseNo" />
+          </Key>
+          <Property Name="houseNo" Type="Int32" Nullable="false" />
+          <Property Name="totalPerson" Type="Int32" Nullable="false" />
+          <Property Name="totalMale" Type="Int32" Nullable="false" />
+          <Property Name="totalFemale" Type="Int32" Nullable="false" />
+          <Property Name="totalChild" Type="Int32" Nullable="false" />
+          <Property Name="street" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="village" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="taluka" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="district" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pincode" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="CensusDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Families" EntityType="Self.Family" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CensusDBModelStoreContainer" CdmEntityContainer="CensusDBEntities">
+          <EntitySetMapping Name="Families">
+            <EntityTypeMapping TypeName="CensusDBModel.Family">
+              <MappingFragment StoreEntitySet="Family">
+                <ScalarProperty Name="houseNo" ColumnName="houseNo" />
+                <ScalarProperty Name="totalPerson" ColumnName="totalPerson" />
+                <ScalarProperty Name="totalMale" ColumnName="totalMale" />
+                <ScalarProperty Name="totalFemale" ColumnName="totalFemale" />
+                <ScalarProperty Name="totalChild" ColumnName="totalChild" />
+                <ScalarProperty Name="street" ColumnName="street" />
+                <ScalarProperty Name="village" ColumnName="village" />
+                <ScalarProperty Name="taluka" ColumnName="taluka" />
+                <ScalarProperty Name="district" ColumnName="district" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="pincode" ColumnName="pincode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

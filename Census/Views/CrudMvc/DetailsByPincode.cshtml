@@ -1,0 +1,95 @@
+﻿@model IEnumerable<Census.Models.Family>
+
+
+@{ ViewBag.Title = "DetailsByPincode"; }
+
+<h2>Report Of Families Belongs To Entered Pin-code</h2>
+
+<table id="tableId" class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("House No")
+        </th>
+        <th>
+            @Html.DisplayName("Total Persons")
+        </th>
+        <th>
+            @Html.DisplayName("Total Male")
+        </th>
+        <th>
+            @Html.DisplayName("Total Female")
+        </th>
+        <th>
+            @Html.DisplayName("Total Child")
+        </th>
+        <th>
+            @Html.DisplayName("Street")
+        </th>
+        <th>
+            @Html.DisplayName("Village")
+        </th>
+        <th>
+            @Html.DisplayName("Taluka")
+        </th>
+        <th>
+            @Html.DisplayName("District")
+        </th>
+        <th>
+            @Html.DisplayName("State")
+        </th>
+        <th>
+            @Html.DisplayName("Pincode")
+        </th>
+        <th>
+            @Html.DisplayName("Action")
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.houseNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.totalPerson)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.totalMale)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.totalFemale)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.totalChild)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.street)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.village)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.taluka)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.district)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.state)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pincode)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.houseNo }, new { @class = "btn btn-success" })
+                @Html.ActionLink("Details", "Details", new { id = item.houseNo }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Delete", "Delete", new { id = item.houseNo }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+
